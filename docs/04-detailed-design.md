@@ -319,48 +319,50 @@
 | t_cookit_recipes | 추천 레시피 (제목, 설명, 조리 방법, 조리 시간, 난이도, 식단 모드, 칼로리, 팁, LLM 원본 응답) | FR-08, 10 |
 | t_cookit_recipe_ingredients | 레시피별 재료 (재료명, 수량·단위, 필수·선택 구분) | FR-10 |
 | t_cookit_favorites | 즐겨찾기 (회원 + 레시피, 중복 방지) | FR-11 |
-| t_cookit_search_history | 추천 요청 기록 (회원, 입력 재료, 식단 모드, 추천 개수) | FR-12 |
+| t_cookit_search_history | 추천 요청 기록 (회원, 입력 재료, 식단 모드, 추천 개수, 결과 레시피) | FR-12 |
 
 **비고**
 
 1. 기준: 기능 요구사항(FR-01~14)에 필요한 데이터 단위로 7개 테이블 구성
-2. 공통: InnoDB, utf8mb4, 기본 키 UUID, 소프트 삭제(`delete_flag`), 생성·수정 일시
-3. 컬럼 정의서·ERD는 07 애플리케이션 개발 시작 시 작성 (Flyway 첫 마이그레이션으로 사용)
+2. 공통: InnoDB, utf8mb4, 기본 키 UUID, 생성·수정 일시. 소프트 삭제(`delete_flag`)는 회원만, 나머지는 실제 삭제
+3. ERD·컬럼 정의서는 `docs/db-design.md` 참고 (Flyway 첫 마이그레이션으로 사용)
 
 ### 14. API
 
 | 메서드 | 경로 | 설명 | 인증 | 요구사항 |
 |---|---|---|---|---|
 | **인증** |  |  |  |  |
-| POST | /api/auth/signup | 회원가입 | - | FR-01 |
-| GET | /api/auth/check-id | 아이디 중복 확인 | - | FR-01 |
-| GET | /api/auth/check-nickname | 닉네임 중복 확인 | - | FR-01 |
-| POST | /api/auth/login | 로그인, JWT 발급 | - | FR-02 |
-| POST | /api/auth/logout | 로그아웃 | 회원 | FR-02 |
-| POST | /api/auth/find-id | 아이디 찾기 (일부 마스킹, IP당 하루 5회) | - | FR-03 |
-| POST | /api/auth/password-reset | 본인 확인 후 재설정 토큰 발급 (IP당 하루 5회) | - | FR-04 |
-| POST | /api/auth/password-reset/confirm | 토큰으로 비밀번호 재설정 | - | FR-04 |
+| POST | /api/v1/auth/signup | 회원가입 | - | FR-01 |
+| GET | /api/v1/auth/check-id | 아이디 중복 확인 | - | FR-01 |
+| GET | /api/v1/auth/check-nickname | 닉네임 중복 확인 | - | FR-01 |
+| POST | /api/v1/auth/login | 로그인, JWT 발급 | - | FR-02 |
+| POST | /api/v1/auth/logout | 로그아웃 | 회원 | FR-02 |
+| POST | /api/v1/auth/find-id | 아이디 찾기 (일부 마스킹, IP당 하루 5회) | - | FR-03 |
+| POST | /api/v1/auth/password-reset | 본인 확인 후 재설정 토큰 발급 (IP당 하루 5회) | - | FR-04 |
+| POST | /api/v1/auth/password-reset/confirm | 토큰으로 비밀번호 재설정 | - | FR-04 |
 | **회원** |  |  |  |  |
-| GET | /api/users/me | 내 정보 조회 | 회원 | FR-05 |
-| PUT | /api/users/me | 이름·닉네임 수정 | 회원 | FR-05 |
-| PUT | /api/users/me/password | 비밀번호 변경 | 회원 | FR-05 |
-| DELETE | /api/users/me | 회원 탈퇴 (소프트 삭제) | 회원 | FR-06 |
+| GET | /api/v1/users/me | 내 정보 조회 | 회원 | FR-05 |
+| PUT | /api/v1/users/me | 이름·닉네임 수정 | 회원 | FR-05 |
+| PUT | /api/v1/users/me/password | 비밀번호 변경 | 회원 | FR-05 |
+| DELETE | /api/v1/users/me | 회원 탈퇴 (소프트 삭제) | 회원 | FR-06 |
 | **내 재료** |  |  |  |  |
-| GET | /api/ingredients | 내 재료 목록 | 회원 | FR-07 |
-| POST | /api/ingredients | 재료 등록 | 회원 | FR-07 |
-| PUT | /api/ingredients/{id} | 재료 수정 | 회원 | FR-07 |
-| DELETE | /api/ingredients/{id} | 재료 삭제 | 회원 | FR-07 |
+| GET | /api/v1/ingredients | 내 재료 목록 | 회원 | FR-07 |
+| POST | /api/v1/ingredients | 재료 등록 | 회원 | FR-07 |
+| PUT | /api/v1/ingredients/{id} | 재료 수정 | 회원 | FR-07 |
+| DELETE | /api/v1/ingredients/{id} | 재료 삭제 | 회원 | FR-07 |
 | **레시피** |  |  |  |  |
-| POST | /api/recipes/recommend | 레시피 추천 (요청 제한 적용) | - | FR-08, 09 |
-| GET | /api/recipes/limit | 오늘 남은 추천 횟수 | - | FR-09 |
-| GET | /api/recipes/{id} | 레시피 상세 (회원은 보유·부족 재료 표시) | - | FR-10 |
-| GET | /api/recipes/ranking | 인기 레시피 TOP 5 | - | FR-14 |
+| POST | /api/v1/recipes/recommend | 레시피 추천 (요청 제한 적용) | - | FR-08, 09 |
+| GET | /api/v1/recipes/limit | 오늘 남은 추천 횟수 | - | FR-09 |
+| GET | /api/v1/recipes/{id} | 레시피 상세 (회원은 보유·부족 재료 표시) | - | FR-10 |
+| GET | /api/v1/recipes/ranking | 인기 레시피 TOP 5 | - | FR-14 |
 | **즐겨찾기** |  |  |  |  |
-| GET | /api/favorites | 즐겨찾기 목록·검색 | 회원 | FR-11 |
-| POST | /api/favorites | 즐겨찾기 등록 (중복 방지) | 회원 | FR-11 |
-| DELETE | /api/favorites/{recipeId} | 즐겨찾기 해제 | 회원 | FR-11 |
+| GET | /api/v1/favorites | 즐겨찾기 목록·검색 | 회원 | FR-11 |
+| POST | /api/v1/favorites | 즐겨찾기 등록 (중복 방지) | 회원 | FR-11 |
+| DELETE | /api/v1/favorites/{recipeId} | 즐겨찾기 해제 | 회원 | FR-11 |
 | **검색 기록** |  |  |  |  |
-| GET | /api/search-history | 추천 요청 기록 목록 | 회원 | FR-12 |
+| GET | /api/v1/search-history | 추천 요청 기록 목록 | 회원 | FR-12 |
+| **공통** |  |  |  |  |
+| GET | /api/v1/codes | 코드 목록 (재료 단위, 식단 모드, 난이도) | - | FR-07, 08 |
 | **운영 (내부 전용)** |  |  |  |  |
 | GET | /actuator/health | 헬스체크 (Nginx·배포) | 내부 | - |
 | GET | /actuator/prometheus | 앱 지표 (Prometheus) | 내부 | - |
@@ -370,6 +372,7 @@
 | 구분 | 규칙 |
 |---|---|
 | 인증 | 로그인 시 받은 JWT를 `Authorization: Bearer` 헤더로 전달, 로그아웃은 클라이언트에서 토큰 삭제 |
+| 버전 | 주소에 버전 표시 (`/api/v1/...`), 호환되지 않는 변경이 필요할 때만 `v2` 추가 (기존 `v1`은 프론트 전환 후 삭제) |
 | 응답 형식 | JSON, 성공 시 데이터, 실패 시 에러 코드와 메시지 |
 | 상태 코드 | 200 성공, 400 입력 오류, 401 로그인 필요, 403 권한 없음, 404 없음, 409 중복, 429 추천 횟수 초과, 500 서버 오류 |
 | 응답 헤더 | `X-Served-By`: 처리한 WAS (FR-13), `X-Request-ID`: 요청 ID (로그 추적) |
