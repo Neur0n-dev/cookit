@@ -1,0 +1,39 @@
+# ===== 비밀 정보 =====
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.vault_pass*
+vault_pass*
+
+# ===== 백엔드 (Java·Gradle) =====
+backend/build/
+backend/.gradle/
+backend/out/
+*.class
+*.log
+hs_err_pid*
+
+# ===== 프론트 (Node·Vite) =====
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# ===== 부하 테스트 결과 =====
+load-test/results/
+
+# ===== Ansible =====
+*.retry
+infra/ansible/.cache/
+
+# ===== IDE (IntelliJ) =====
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ===== OS =====
+.DS_Store
+Thumbs.db

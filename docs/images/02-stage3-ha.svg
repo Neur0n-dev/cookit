@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 740" width="960" height="740" role="img" aria-label="cookit 3단계 이중화 구성도">
+<style>:root{
+  --bg:#f5f7f9; --panel:#ffffff; --fg:#17212b; --muted:#5b6977; --line:#c9d3dc;
+  --pub:#1f6feb; --pub-soft:#e3eeff;
+  --dmz:#fff6e6; --dmz-line:#e0a43a;
+  --app:#eaf6ef; --app-line:#3c9a63;
+  --db:#f1ecfb; --db-line:#7a5bc4;
+  --ext:#eef1f4;
+  --ops:#fcedf1; --ops-line:#c2537a;
+  --ok:#1f8a4c; --idle:#8a96a3; --part:#c27c0e;
+  --sans:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+svg text{font-family:var(--sans);fill:var(--fg)}
+svg .m{font-family:var(--mono);font-size:12px;fill:var(--muted)}
+svg .t{font-size:14px;font-weight:700}
+svg .zl{font-size:12px;font-weight:700;letter-spacing:.06em}
+svg .s{font-size:11px;fill:var(--muted)}
+.node{fill:var(--panel);stroke:var(--line);stroke-width:1.2}
+.extnode{fill:var(--ext);stroke:var(--line);stroke-width:1.2;stroke-dasharray:4 3}
+.vip{fill:var(--pub-soft);stroke:var(--pub);stroke-width:1.5}
+.vip-t{fill:var(--pub)!important;font-weight:700;font-size:13px}
+.z-dmz{fill:var(--dmz);stroke:var(--dmz-line);stroke-dasharray:6 4}
+.z-app{fill:var(--app);stroke:var(--app-line);stroke-dasharray:6 4}
+.z-db{fill:var(--db);stroke:var(--db-line);stroke-dasharray:6 4}
+.frame{fill:none;stroke:var(--line);stroke-width:1.5}
+.z-ops{fill:var(--ops);stroke:var(--ops-line);stroke-dasharray:6 4}
+.zl-ops{fill:var(--ops-line)!important}
+.zl-dmz{fill:var(--dmz-line)!important}.zl-app{fill:var(--app-line)!important}.zl-db{fill:var(--db-line)!important}
+.fw{fill:var(--fg)}.fw-t{fill:var(--bg)!important;font-weight:700;font-size:13px}.fw-s{fill:var(--bg)!important;font-size:11px;opacity:.8}
+.a{stroke:var(--fg);stroke-width:1.6;fill:none;marker-end:url(#ar)}
+.a-pub{stroke:var(--pub);marker-end:url(#ar3)}
+.a-dash{stroke:var(--idle);stroke-dasharray:5 4;marker-end:url(#ar2)}
+.hb{stroke:var(--ok);stroke-width:1.4;stroke-dasharray:3 3;fill:none}
+.badge-ok{fill:var(--ok)}.badge-idle{fill:var(--idle)}
+.badge-t{fill:#fff!important;font-size:10px;font-weight:700;letter-spacing:.05em}
+.arhead{fill:var(--fg)}.arhead2{fill:var(--idle)}
+
+</style>
+<defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arhead" d="M0,0L10,5L0,10z"/></marker>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arhead2" d="M0,0L10,5L0,10z"/></marker>
+        <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path style="fill:var(--pub)" d="M0,0L10,5L0,10z"/></marker>
+      </defs>
+<rect x="0" y="0" width="960" height="740" fill="#ffffff"/>
+
+      <rect class="node" x="180" y="16" width="240" height="60" rx="8"/>
+      <text class="t" x="196" y="40">사용자 (인터넷)</text>
+      <text class="m" x="196" y="62">https://cookit.neurondev.co.kr</text>
+      <rect class="extnode" x="656" y="16" width="288" height="92" rx="8"/>
+      <text class="t" x="672" y="40">외부 서비스</text>
+      <text class="s" x="672" y="60">GitHub Actions · GHCR · <tspan style="fill:var(--pub);font-weight:700">Gemini API</tspan></text>
+      <text class="s" x="672" y="78">Slack</text>
+      <text class="s" x="672" y="98" style="fill:var(--idle)">서버에서 나가는 연결: 443</text>
+      <rect class="frame" x="16" y="124" width="928" height="568" rx="14"/>
+      <text class="zl" x="32" y="148" style="fill:var(--muted)">내부 서버망 · 192.168.10.0/24</text>
+      <path class="a" d="M300,76 L300,152"/>
+      <text class="s" x="310" y="106">① 가비아 DNS A 레코드 → 공인 IP:443</text>
+      <rect class="fw" x="180" y="156" width="240" height="48" rx="8"/>
+      <text class="fw-t" x="196" y="176">방화벽 (NAT)</text>
+      <text class="fw-s" x="196" y="194">공인 IP:80·443 → VIP</text>
+      <text class="s" x="586" y="150" style="fill:var(--pub)">⑤ Gemini API 호출 (443)</text>
+      <rect class="z-dmz" x="36" y="220" width="528" height="152" rx="10"/>
+      <text class="zl zl-dmz" x="52" y="242">WEB 계층</text>
+      <rect class="z-app" x="36" y="392" width="528" height="120" rx="10"/>
+      <text class="zl zl-app" x="52" y="414">APP 계층</text>
+      <rect class="z-db" x="36" y="552" width="528" height="120" rx="10"/>
+      <text class="zl zl-db" x="52" y="574">DB 계층</text>
+      <rect class="z-ops" x="588" y="220" width="336" height="452" rx="10"/>
+      <text class="zl zl-ops" x="604" y="242">운영 계층</text>
+      <rect class="vip" x="210" y="230" width="180" height="28" rx="14"/>
+      <text class="vip-t" x="300" y="249" text-anchor="middle">VIP 192.168.10.100</text>
+      <rect class="node" x="48" y="284" width="228" height="72" rx="8"/>
+      <text class="t" x="64" y="308">LB1 · cookit-lb01</text>
+      <text class="m" x="64" y="328">192.168.10.101</text>
+      <text class="s" x="64" y="346">Nginx · TLS 종료 · /api → WAS</text>
+      <rect class="badge-ok" x="202" y="314" width="62" height="20" rx="10"/>
+      <text class="badge-t" x="233.0" y="328" text-anchor="middle">ACTIVE</text>
+      <rect class="node" x="324" y="284" width="228" height="72" rx="8"/>
+      <text class="t" x="340" y="308">LB2 · cookit-lb02</text>
+      <text class="m" x="340" y="328">192.168.10.102</text>
+      <text class="s" x="340" y="346">LB1 장애 시 VIP 인계</text>
+      <rect class="badge-idle" x="468" y="314" width="72" height="20" rx="10"/>
+      <text class="badge-t" x="504.0" y="328" text-anchor="middle">STANDBY</text>
+      <rect class="node" x="48" y="426" width="228" height="72" rx="8"/>
+      <text class="t" x="64" y="450">WAS1 · cookit-was01</text>
+      <text class="m" x="64" y="470">192.168.10.111</text>
+      <text class="s" x="64" y="488">Spring Boot :8080 · HAProxy :3306</text>
+      <rect class="node" x="324" y="426" width="228" height="72" rx="8"/>
+      <text class="t" x="340" y="450">WAS2 · cookit-was02</text>
+      <text class="m" x="340" y="470">192.168.10.112</text>
+      <text class="s" x="340" y="488">Spring Boot :8080 · HAProxy :3306</text>
+      <rect class="node" x="48" y="586" width="228" height="72" rx="8"/>
+      <text class="t" x="64" y="610">DB1 · cookit-db01</text>
+      <text class="m" x="64" y="630">192.168.10.131</text>
+      <text class="s" x="64" y="648">MariaDB Galera · 읽기·쓰기</text>
+      <rect class="badge-ok" x="202" y="616" width="62" height="20" rx="10"/>
+      <text class="badge-t" x="233.0" y="630" text-anchor="middle">ACTIVE</text>
+      <rect class="node" x="324" y="586" width="228" height="72" rx="8"/>
+      <text class="t" x="340" y="610">DB2 · cookit-db02</text>
+      <text class="m" x="340" y="630">192.168.10.132</text>
+      <text class="s" x="340" y="648">MariaDB Galera · 대기 (동기 복제)</text>
+      <rect class="badge-idle" x="468" y="616" width="72" height="20" rx="10"/>
+      <text class="badge-t" x="504.0" y="630" text-anchor="middle">STANDBY</text>
+      <rect class="node" x="628" y="400" width="280" height="170" rx="8"/>
+      <text class="t" x="644" y="424">모니터링 · cookit-mon01</text>
+      <text class="m" x="644" y="444">192.168.10.121</text>
+      <text class="s" x="644" y="472">Prometheus · Grafana · Alertmanager · Loki</text>
+      <text class="s" x="644" y="492">blackbox_exporter</text>
+      <text class="s" x="644" y="520" style="font-weight:700">Redis :6379 (캐시·요청 제한·랭킹)</text>
+      <text class="s" x="644" y="546">garbd · GitHub Runner · DB 백업 보관</text>
+      <path class="a" d="M300,204 L300,226"/>
+      <path class="a a-pub" d="M300,258 L300,268 L162,268 L162,280"/>
+      <path class="a a-dash" d="M300,268 L438,268 L438,280"/>
+      <path class="hb" d="M276,320 L324,320"/>
+      <text class="s" x="300" y="314" text-anchor="middle" style="fill:var(--ok)">VRRP</text>
+      <path class="a" d="M162,356 L162,422"/>
+      <path class="a" d="M162,382 L438,382 L438,422"/>
+      <text class="s" x="446" y="408">② 라운드로빈</text>
+      <path class="a" d="M564,505 L624,505"/>
+      <circle cx="564" cy="505" r="3.5" style="fill:var(--fg)"/>
+      <text class="s" x="596" y="498" text-anchor="middle">③ 캐시</text>
+      <path class="a a-dash" d="M162,534 L438,534 L438,582"/>
+      <text class="s" x="300" y="528" text-anchor="middle" style="fill:var(--idle)">DB1 장애 시 DB2로 전환</text>
+      <path class="a" d="M162,512 L162,582"/>
+      <circle cx="162" cy="512" r="3.5" style="fill:var(--fg)"/>
+      <circle cx="162" cy="534" r="3" style="fill:var(--idle)"/>
+      <text class="s" x="172" y="568">④ 평소: DB1 (HAProxy)</text>
+      <path class="a" d="M280,632 L320,632"/>
+      <text class="s" x="300" y="624" text-anchor="middle" style="fill:var(--db-line)">Galera</text>
+      <path class="a a-pub" d="M564,404 L576,404 L576,62 L652,62"/>
+      <circle cx="564" cy="404" r="3.5" style="fill:var(--pub)"/>
+      <text class="s" x="586" y="166" style="fill:var(--pub)">WAS1·2 공통</text>
+      <path class="a a-dash" d="M756,400 L756,112"/>
+      <text class="s" x="764" y="180" style="fill:var(--idle)">443 나가기만</text>
+      <path class="a a-dash" d="M680,570 L680,600 L568,600"/>
+      <text class="s" x="688" y="596" style="fill:var(--idle)">garbd 투표</text>
+      <path class="a a-dash" d="M564,648 L820,648 L820,574"/>
+      <circle cx="564" cy="648" r="3.5" style="fill:var(--idle)"/>
+      <text class="s" x="828" y="636" style="fill:var(--idle)">백업 (매일)</text>
+      <path class="a" d="M24,718 L64,718"/>
+      <text class="s" x="72" y="722">사용자 요청</text>
+      <path class="a a-pub" d="M164,718 L204,718"/>
+      <text class="s" x="212" y="722">외부 호출 (443)</text>
+      <path class="a a-dash" d="M324,718 L364,718"/>
+      <text class="s" x="372" y="722">운영 (배포·알림·백업)</text>
+    
+</svg>

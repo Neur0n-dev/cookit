@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" role="img" aria-label="cookit 1단계 단일 구성도">
+<style>:root{
+  --bg:#f5f7f9; --panel:#ffffff; --fg:#17212b; --muted:#5b6977; --line:#c9d3dc;
+  --pub:#1f6feb; --pub-soft:#e3eeff;
+  --dmz:#fff6e6; --dmz-line:#e0a43a;
+  --app:#eaf6ef; --app-line:#3c9a63;
+  --db:#f1ecfb; --db-line:#7a5bc4;
+  --ext:#eef1f4;
+  --ops:#fcedf1; --ops-line:#c2537a;
+  --ok:#1f8a4c; --idle:#8a96a3; --part:#c27c0e;
+  --sans:"IBM Plex Sans KR",system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+svg text{font-family:var(--sans);fill:var(--fg)}
+svg .m{font-family:var(--mono);font-size:12px;fill:var(--muted)}
+svg .t{font-size:14px;font-weight:700}
+svg .zl{font-size:12px;font-weight:700;letter-spacing:.06em}
+svg .s{font-size:11px;fill:var(--muted)}
+.node{fill:var(--panel);stroke:var(--line);stroke-width:1.2}
+.extnode{fill:var(--ext);stroke:var(--line);stroke-width:1.2;stroke-dasharray:4 3}
+.vip{fill:var(--pub-soft);stroke:var(--pub);stroke-width:1.5}
+.vip-t{fill:var(--pub)!important;font-weight:700;font-size:13px}
+.z-dmz{fill:var(--dmz);stroke:var(--dmz-line);stroke-dasharray:6 4}
+.z-app{fill:var(--app);stroke:var(--app-line);stroke-dasharray:6 4}
+.z-db{fill:var(--db);stroke:var(--db-line);stroke-dasharray:6 4}
+.frame{fill:none;stroke:var(--line);stroke-width:1.5}
+.z-ops{fill:var(--ops);stroke:var(--ops-line);stroke-dasharray:6 4}
+.zl-ops{fill:var(--ops-line)!important}
+.zl-dmz{fill:var(--dmz-line)!important}.zl-app{fill:var(--app-line)!important}.zl-db{fill:var(--db-line)!important}
+.fw{fill:var(--fg)}.fw-t{fill:var(--bg)!important;font-weight:700;font-size:13px}.fw-s{fill:var(--bg)!important;font-size:11px;opacity:.8}
+.a{stroke:var(--fg);stroke-width:1.6;fill:none;marker-end:url(#ar)}
+.a-pub{stroke:var(--pub);marker-end:url(#ar3)}
+.a-dash{stroke:var(--idle);stroke-dasharray:5 4;marker-end:url(#ar2)}
+.hb{stroke:var(--ok);stroke-width:1.4;stroke-dasharray:3 3;fill:none}
+.badge-ok{fill:var(--ok)}.badge-idle{fill:var(--idle)}
+.badge-t{fill:#fff!important;font-size:10px;font-weight:700;letter-spacing:.05em}
+.arhead{fill:var(--fg)}.arhead2{fill:var(--idle)}
+
+</style>
+<rect x="0" y="0" width="960" height="680" fill="#ffffff"/>
+
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arhead" d="M0,0L10,5L0,10z"/></marker>
+        <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arhead2" d="M0,0L10,5L0,10z"/></marker>
+        <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path style="fill:var(--pub)" d="M0,0L10,5L0,10z"/></marker>
+      </defs>
+      <rect class="node" x="180" y="16" width="240" height="60" rx="8"/>
+      <text class="t" x="196" y="40">사용자 (인터넷)</text>
+      <text class="m" x="196" y="62">http://cookit.neurondev.co.kr</text>
+      <rect class="extnode" x="656" y="16" width="288" height="92" rx="8"/>
+      <text class="t" x="672" y="40">외부 서비스</text>
+      <text class="s" x="672" y="60">GitHub Actions · GHCR · <tspan style="fill:var(--pub);font-weight:700">Gemini API</tspan></text>
+      <text class="s" x="672" y="78">Slack</text>
+      <text class="s" x="672" y="98" style="fill:var(--idle)">서버에서 나가는 연결: 443</text>
+      <rect class="frame" x="16" y="124" width="928" height="506" rx="14"/>
+      <text class="zl" x="32" y="148" style="fill:var(--muted)">내부 서버망 · 192.168.10.0/24</text>
+      <path class="a" d="M300,76 L300,152"/>
+      <text class="s" x="310" y="106">① 가비아 DNS A 레코드 → 공인 IP:80</text>
+      <rect class="fw" x="180" y="156" width="240" height="48" rx="8"/>
+      <text class="fw-t" x="196" y="176">방화벽 (NAT)</text>
+      <text class="fw-s" x="196" y="194">공인 IP:80 → LB1:80</text>
+      <text class="s" x="586" y="150" style="fill:var(--pub)">⑤ Gemini API 호출 (443)</text>
+      <rect class="z-dmz" x="36" y="220" width="528" height="110" rx="10"/>
+      <text class="zl zl-dmz" x="52" y="242">WEB 계층</text>
+      <rect class="z-app" x="36" y="350" width="528" height="110" rx="10"/>
+      <text class="zl zl-app" x="52" y="372">APP 계층</text>
+      <rect class="z-db" x="36" y="500" width="528" height="110" rx="10"/>
+      <text class="zl zl-db" x="52" y="522">DB 계층</text>
+      <rect class="z-ops" x="588" y="220" width="336" height="390" rx="10"/>
+      <text class="zl zl-ops" x="604" y="242">운영 계층</text>
+      <rect class="node" x="180" y="244" width="240" height="72" rx="8"/>
+      <text class="t" x="196" y="268">LB1 · cookit-lb01</text>
+      <text class="m" x="196" y="288">192.168.10.101</text>
+      <text class="s" x="196" y="306">Nginx · React 서빙 · /api → WAS</text>
+      <rect class="node" x="180" y="374" width="240" height="72" rx="8"/>
+      <text class="t" x="196" y="398">WAS1 · cookit-was01</text>
+      <text class="m" x="196" y="418">192.168.10.111</text>
+      <text class="s" x="196" y="436">Spring Boot :8080 · HAProxy :3306</text>
+      <rect class="node" x="180" y="524" width="240" height="72" rx="8"/>
+      <text class="t" x="196" y="548">DB1 · cookit-db01</text>
+      <text class="m" x="196" y="568">192.168.10.131</text>
+      <text class="s" x="196" y="586">MariaDB · 읽기·쓰기</text>
+      <rect class="node" x="628" y="300" width="280" height="170" rx="8"/>
+      <text class="t" x="644" y="324">모니터링 · cookit-mon01</text>
+      <text class="m" x="644" y="344">192.168.10.121</text>
+      <text class="s" x="644" y="372">Prometheus · Grafana · Alertmanager · Loki</text>
+      <text class="s" x="644" y="392">blackbox_exporter</text>
+      <text class="s" x="644" y="420" style="font-weight:700">Redis :6379 (캐시·요청 제한·랭킹)</text>
+      <text class="s" x="644" y="446">GitHub Runner · DB 백업 보관</text>
+      <path class="a" d="M300,204 L300,240"/>
+      <path class="a" d="M300,316 L300,370"/>
+      <text class="s" x="310" y="346">② /api 요청</text>
+      <path class="a" d="M564,453 L624,453"/>
+      <circle cx="564" cy="453" r="3.5" style="fill:var(--fg)"/>
+      <text class="s" x="596" y="446" text-anchor="middle">③ 캐시</text>
+      <path class="a" d="M300,460 L300,496"/>
+      <circle cx="300" cy="460" r="3.5" style="fill:var(--fg)"/>
+      <text class="s" x="310" y="484">④ DB 조회·저장</text>
+      <path class="a a-pub" d="M564,362 L576,362 L576,62 L652,62"/>
+      <circle cx="564" cy="362" r="3.5" style="fill:var(--pub)"/>
+      <path class="a a-dash" d="M756,300 L756,112"/>
+      <text class="s" x="764" y="180" style="fill:var(--idle)">443 나가기만</text>
+      <path class="a a-dash" d="M564,568 L820,568 L820,474"/>
+      <circle cx="564" cy="568" r="3.5" style="fill:var(--idle)"/>
+      <text class="s" x="828" y="556" style="fill:var(--idle)">백업 (매일)</text>
+      <path class="a" d="M24,656 L64,656"/>
+      <text class="s" x="72" y="660">사용자 요청</text>
+      <path class="a a-pub" d="M164,656 L204,656"/>
+      <text class="s" x="212" y="660">외부 호출 (443)</text>
+      <path class="a a-dash" d="M324,656 L364,656"/>
+      <text class="s" x="372" y="660">운영 (배포·알림·백업)</text>
+    
+</svg>
