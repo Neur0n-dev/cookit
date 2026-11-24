@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1180" width="1100" height="1180" font-family="-apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+<defs><filter id="sh" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0b0f19" flood-opacity="0.07"/></filter></defs>
+<rect width="1100" height="1180" fill="#ffffff"/>
+<text x="24" y="32" font-size="17" text-anchor="start" font-weight="800" fill="#0b0f19">05. 회원가입</text>
+<text x="24" y="52" font-size="12" text-anchor="start" font-weight="400" fill="#6b7280">경로 /signup · 헤더 없이 가운데 카드</text>
+<rect x="20" y="66" width="1060" height="1100" rx="10" fill="#fff" stroke="#9ca3af" stroke-width="1"/>
+<rect x="20" y="66" width="1060" height="32" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+<rect x="21" y="86" width="1058" height="12" fill="#f3f4f6"/>
+<line x1="20" y1="98" x2="1080" y2="98" stroke="#d1d5db" stroke-width="1"/>
+<circle cx="38" cy="82" r="5" fill="#f87171"/>
+<circle cx="54" cy="82" r="5" fill="#fbbf24"/>
+<circle cx="70" cy="82" r="5" fill="#34d399"/>
+<rect x="96" y="74" width="964" height="17" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+<text x="108" y="87" font-size="11" text-anchor="start" font-weight="400" fill="#6b7280">cookit.neurondev.co.kr/signup</text>
+<rect x="21" y="1110" width="1058" height="55" fill="#f9fafb"/>
+<line x1="20" y1="1110" x2="1080" y2="1110" stroke="#e5e7eb" stroke-width="1"/>
+<g transform="translate(52,1127) scale(0.7142857142857143)"><circle cx="13" cy="13" r="12" fill="#1f2329"/><circle cx="13" cy="13" r="9.5" fill="#343a42"/><ellipse cx="13" cy="13.5" rx="6.8" ry="6" fill="#f5f5f5"/><circle cx="13" cy="13" r="3.4" fill="#ffb400"/><rect x="21" y="20" width="9" height="3.4" rx="1.7" transform="rotate(45 21 20)" fill="#2c3138"/></g>
+<text x="80" y="1142.6" font-size="17" text-anchor="start" font-weight="400"><tspan fill="#0b0f19" font-weight="900">Cook</tspan><tspan fill="#f97316" font-weight="900">it</tspan></text>
+<text x="170" y="1143" font-size="11" text-anchor="start" font-weight="400" fill="#6b7280">© 2026 Cookit</text>
+<text x="1048" y="1143" font-size="11" text-anchor="end" font-weight="600" fill="#6b7280">served by cookit-was01</text>
+<rect x="325.0" y="185.0" width="450" height="780" rx="18" fill="#fff" stroke="#e5e7eb" stroke-width="1" filter="url(#sh)"/>
+<rect x="351.0" y="215.0" width="40" height="40" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1" filter="url(#sh)"/>
+<g transform="translate(357.0,221.0) scale(1.0)"><circle cx="13" cy="13" r="12" fill="#1f2329"/><circle cx="13" cy="13" r="9.5" fill="#343a42"/><ellipse cx="13" cy="13.5" rx="6.8" ry="6" fill="#f5f5f5"/><circle cx="13" cy="13" r="3.4" fill="#ffb400"/><rect x="21" y="20" width="9" height="3.4" rx="1.7" transform="rotate(45 21 20)" fill="#2c3138"/></g>
+<text x="403.0" y="237.0" font-size="24" text-anchor="start" font-weight="400"><tspan fill="#0b0f19" font-weight="900">Cook</tspan><tspan fill="#f97316" font-weight="900">it</tspan></text>
+<text x="403.0" y="257.0" font-size="13" text-anchor="start" font-weight="400" fill="#6b7280">아이디와 닉네임은 중복 확인이 필요합니다.</text>
+<text x="351.0" y="301.0" font-size="12" text-anchor="start" font-weight="500" fill="#6b7280">아이디</text>
+<rect x="351.0" y="311.0" width="398" height="50" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+<text x="365.0" y="341.0" font-size="13" text-anchor="start" font-weight="400" fill="#111827">cookit01</text>
+<text x="733.0" y="341.0" font-size="12" text-anchor="end" font-weight="400" fill="#6b7280">✕</text>
+<rect x="637.0" y="321.0" width="72" height="30" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+<text x="673.0" y="340.32" font-size="12" text-anchor="middle" font-weight="700" fill="#111827">중복확인</text>
+<text x="353.0" y="379.0" font-size="11" text-anchor="start" font-weight="500" fill="#16a34a">✓ 사용할 수 있는 아이디입니다 (영문 소문자·숫자 4~20자)</text>
+<text x="351.0" y="405.0" font-size="12" text-anchor="start" font-weight="500" fill="#6b7280">비밀번호</text>
+<rect x="351.0" y="415.0" width="398" height="50" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+<text x="365.0" y="445.0" font-size="13" text-anchor="start" font-weight="400" fill="#9ca3af">비밀번호를 입력하세요</text>
+<text x="733.0" y="445.0" font-size="12" text-anchor="end" font-weight="400" fill="#6b7280">✕</text>
+<text x="707.0" y="445.0" font-size="13" text-anchor="end" font-weight="400" fill="#6b7280">👁</text>
+<text x="353.0" y="483.0" font-size="11" text-anchor="start" font-weight="500" fill="#6b7280">8~20자, 영문·숫자 포함</text>
+<text x="351.0" y="509.0" font-size="12" text-anchor="start" font-weight="500" fill="#6b7280">비밀번호 확인</text>
+<rect x="351.0" y="519.0" width="398" height="50" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+<text x="365.0" y="549.0" font-size="13" text-anchor="start" font-weight="400" fill="#9ca3af">비밀번호를 다시 입력하세요</text>
+<text x="733.0" y="549.0" font-size="12" text-anchor="end" font-weight="400" fill="#6b7280">✕</text>
+<text x="707.0" y="549.0" font-size="13" text-anchor="end" font-weight="400" fill="#6b7280">👁</text>
+<text x="353.0" y="587.0" font-size="11" text-anchor="start" font-weight="500" fill="#ef4444">비밀번호가 일치하지 않습니다</text>
+<text x="351.0" y="613.0" font-size="12" text-anchor="start" font-weight="500" fill="#6b7280">이름</text>
+<rect x="351.0" y="623.0" width="398" height="50" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+<text x="365.0" y="653.0" font-size="13" text-anchor="start" font-weight="400" fill="#9ca3af">이름을 입력하세요</text>
+<text x="733.0" y="653.0" font-size="12" text-anchor="end" font-weight="400" fill="#6b7280">✕</text>
+<text x="353.0" y="691.0" font-size="11" text-anchor="start" font-weight="500" fill="#6b7280">아이디·비밀번호 찾기에 사용</text>
+<text x="351.0" y="717.0" font-size="12" text-anchor="start" font-weight="500" fill="#6b7280">닉네임</text>
+<rect x="351.0" y="727.0" width="398" height="50" rx="12" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+<text x="365.0" y="757.0" font-size="13" text-anchor="start" font-weight="400" fill="#111827">요리왕</text>
+<text x="733.0" y="757.0" font-size="12" text-anchor="end" font-weight="400" fill="#6b7280">✕</text>
+<rect x="637.0" y="737.0" width="72" height="30" rx="8" fill="#fff" stroke="#e5e7eb" stroke-width="1"/>
+<text x="673.0" y="756.32" font-size="12" text-anchor="middle" font-weight="700" fill="#111827">중복확인</text>
+<text x="353.0" y="795.0" font-size="11" text-anchor="start" font-weight="500" fill="#6b7280">2~10자, 특수문자 불가</text>
+<rect x="351.0" y="819.0" width="398" height="50" rx="12" fill="#111827" stroke="none"/>
+<text x="550.0" y="849.4" font-size="15" text-anchor="middle" font-weight="700" fill="#fff">회원가입</text>
+<text x="550.0" y="901.0" font-size="12" text-anchor="middle" font-weight="500" fill="#6b7280">이미 계정이 있어요   |   홈으로</text>
+<text x="351.0" y="933.0" font-size="11" text-anchor="start" font-weight="400" fill="#9ca3af">아이디·닉네임 중복 확인 후 가입 버튼 활성화</text>
+</svg>
